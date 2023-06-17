@@ -27,8 +27,8 @@ root.render(
           },
         ],
         merchantInfo: {
-          merchantId: '12345678901234567890',
-          merchantName: 'Demo Merchant',
+          merchantId: '3745-1761-6796',
+          merchantName: 'Fotoviet Account',
         },
         transactionInfo: {
           totalPriceStatus: 'FINAL',
