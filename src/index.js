@@ -27,20 +27,35 @@ root.render(
           },
         ],
         merchantInfo: {
-          merchantId: 'Rapify Cloud',
+          merchantId: '12345678901234567890',
           merchantName: 'Demo Merchant',
         },
         transactionInfo: {
           totalPriceStatus: 'FINAL',
           totalPriceLabel: 'Total',
-          totalPrice: '100.00',
+          totalPrice: '1',
           currencyCode: 'USD',
           countryCode: 'US',
         },
+        shippingAddressRequired: true,
+        callbackIntents: ['SHIPPING_ADDRESS', 'PAYMENT_AUTHORIZATION'],
       }}
       onLoadPaymentData={paymentRequest => {
-        console.log('load payment data', paymentRequest);
+        console.log('Success', paymentRequest);
       }}
+      onPaymentAuthorized={paymentData => {
+        console.log('Payment Authorised Success', paymentData)
+        return { transactionState: 'SUCCESS' }
+      }
+      }
+      onPaymentDataChanged={paymentData => {
+        console.log('On Payment Data Changed', paymentData)
+        return {}
+      }
+      }
+      existingPaymentMethodRequired='false'
+      buttonColor='black'
+      buttonType='Buy'
     />
   </React.StrictMode>
 );
